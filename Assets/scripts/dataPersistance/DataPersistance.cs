@@ -12,17 +12,22 @@ public class DataPersistance : MonoBehaviour
     public int puntuation;
 
     private const string DIFILCUTY = "Dificulty";
-    public int hardMode = 0;
+    public int dificulty = 0;  
+
+    // if dificulty equals 0 it means that you are playing on normal mode
+    // if dificulty mode equals 1 it means that you are playing on hard moode an power ups will not spawn
 
     // scripts reference
 
     private PlayerController playerController;
     private UImanager uImanager;
+    
 
     private void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
         uImanager = FindObjectOfType<UImanager>();
+        
 
         
     }
@@ -68,10 +73,12 @@ public class DataPersistance : MonoBehaviour
 
     public void SaveDificulty()
     {
-        int isHardMode = hardMode;
+        int isHardMode = dificulty;
 
         PlayerPrefs.SetInt(DIFILCUTY, isHardMode);
 
+
+       
 
     }
     public void LoadDificulty()
@@ -79,7 +86,7 @@ public class DataPersistance : MonoBehaviour
         if (PlayerPrefs.HasKey (DIFILCUTY))
         {
             int dificlty = PlayerPrefs.GetInt(DIFILCUTY);
-            hardMode = dificlty;
+            dificulty = dificlty;
 
         }
         else
@@ -92,11 +99,11 @@ public class DataPersistance : MonoBehaviour
 
     public void SetNormalMode()
     {
-        hardMode = 0;
+        dificulty = 0;
     }
     public void SetHardMode()
     {
-        hardMode = 1;
+        dificulty = 1;
     }
 
 

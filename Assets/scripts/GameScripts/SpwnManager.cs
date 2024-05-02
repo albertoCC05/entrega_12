@@ -14,6 +14,8 @@ public class SpwnManager : MonoBehaviour
     private PlayerController gameOverScript;
     private UiGameScene UimanagerGameScript;
     private DataPersistance dataP;
+
+    
         
 
 
@@ -58,7 +60,7 @@ public class SpwnManager : MonoBehaviour
     {
         
 
-        if (gameOverScript.isGameOver == false && gameOverScript.hasPowerUp == false && dataP.hardMode == 0 )
+        if (gameOverScript.isGameOver == false && gameOverScript.hasPowerUp == false && dataP.dificulty == 0)
         {
             Instantiate(powerUp, RandomSpawnPos(), Quaternion.identity);
         }
