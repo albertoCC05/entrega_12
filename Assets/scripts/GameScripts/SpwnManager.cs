@@ -60,7 +60,7 @@ public class SpwnManager : MonoBehaviour
     {
         
 
-        if (gameOverScript.isGameOver == false && gameOverScript.hasPowerUp == false && dataP.dificulty == 0)
+        if (gameOverScript.isGameOver == false && gameOverScript.hasPowerUp == false && dataP.hardModeActivated == false)
         {
             Instantiate(powerUp, RandomSpawnPos(), Quaternion.identity);
         }
